@@ -34,6 +34,7 @@
   },
   "scripts": {
     "start": "vite",
+    "prebuild": "mkdir -p dist",
     "build": "vite build --sourcemap",
     "serve": "vite preview"
   },
