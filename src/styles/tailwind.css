@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #FDFCFB; /* warm off-white */
+    --color-foreground: #2D3436; /* deep charcoal */
+    --color-border: rgba(123, 154, 126, 0.12); /* sage green with low opacity */
+    --color-input: #F7F6F4; /* subtle warm gray */
+    --color-ring: #7B9A7E; /* sage green */
+    
+    /* Card Colors */
+    --color-card: #F7F6F4; /* subtle warm gray */
+    --color-card-foreground: #2D3436; /* deep charcoal */
+    
+    /* Popover Colors */
+    --color-popover: #FDFCFB; /* warm off-white */
+    --color-popover-foreground: #2D3436; /* deep charcoal */
+    
+    /* Muted Colors */
+    --color-muted: #F7F6F4; /* subtle warm gray */
+    --color-muted-foreground: #636E72; /* medium gray */
+    
+    /* Primary Colors */
+    --color-primary: #7B9A7E; /* sage green */
+    --color-primary-foreground: #FFFFFF; /* white */
+    
+    /* Secondary Colors */
+    --color-secondary: #A8C4AA; /* lighter sage variant */
+    --color-secondary-foreground: #2D3436; /* deep charcoal */
+    
+    /* Destructive Colors */
+    --color-destructive: #E57373; /* muted coral */
+    --color-destructive-foreground: #FFFFFF; /* white */
+    
+    /* Accent Colors */
+    --color-accent: #E8B4A0; /* warm terracotta */
+    --color-accent-foreground: #2D3436; /* deep charcoal */
+    
+    /* Success Colors */
+    --color-success: #81C784; /* gentle green */
+    --color-success-foreground: #FFFFFF; /* white */
+    
+    /* Warning Colors */
+    --color-warning: #FFB74D; /* soft amber */
+    --color-warning-foreground: #2D3436; /* deep charcoal */
+    
+    /* Error Colors */
+    --color-error: #E57373; /* muted coral */
+    --color-error-foreground: #FFFFFF; /* white */
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+  }
+
+  .font-caption {
+    font-family: 'Nunito Sans', sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  /* Breathing Animation */
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+
+  .animate-breathe {
+    animation: breathe 2.5s ease-in-out infinite;
+  }
+
+  /* Gentle Pulse for Loading States */
+  @keyframes gentle-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+
+  .animate-gentle-pulse {
+    animation: gentle-pulse 1.5s ease-in-out infinite;
+  }
+
+  /* Soft Neumorphism Styles */
+  .soft-inset {
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.06);
+  }
+
+  /* Therapeutic Shadow System */
+  .shadow-therapeutic-sm {
+    box-shadow: 0 2px 8px rgba(123, 154, 126, 0.08);
+  }
+
+  .shadow-therapeutic {
+    box-shadow: 0 4px 20px rgba(123, 154, 126, 0.08);
+  }
+
+  .shadow-therapeutic-lg {
+    box-shadow: 0 8px 32px rgba(123, 154, 126, 0.12);
+  }
+
+  /* Smooth Transitions */
+  .transition-therapeutic {
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .transition-height {
+    transition: height 0.3s ease-out;
+  }
+
+  /* Crisis Mode Styles */
+  .crisis-overlay {
+    background: linear-gradient(135deg, rgba(229, 115, 115, 0.95), rgba(255, 183, 77, 0.95));
+    backdrop-filter: blur(8px);
+  }
+
+  /* Gradient Depth Layers */
+  .gradient-depth-subtle {
+    background: linear-gradient(180deg, rgba(123, 154, 126, 0.03) 0%, rgba(123, 154, 126, 0.08) 100%);
+  }
+
+  .gradient-depth-card {
+    background: linear-gradient(145deg, rgba(247, 246, 244, 0.8) 0%, rgba(253, 252, 251, 0.9) 100%);
+  }
+
+  /* Organic Border Radius */
+  .rounded-organic {
+    border-radius: 16px;
+  }
+
+  .rounded-organic-lg {
+    border-radius: 24px;
+  }
+
+  /* Focus States for Accessibility */
+  .focus-therapeutic:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Reduced Motion Support */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-breathe,
+    .animate-gentle-pulse {
+      animation: none;
+    }
+    
+    .transition-therapeutic,
+    .transition-height {
+      transition: none;
+    }
+  }
+}
